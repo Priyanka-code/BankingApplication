@@ -2,6 +2,7 @@ package com.example.BankApplication.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -25,7 +26,7 @@ public class LoginController {
 	private LoginService loginService;
 
 	@GetMapping("/users/{userId}")
-	public User retrieveUserInfo(@PathVariable Long userId) {
+	public Optional<User> retrieveUserInfo(@PathVariable Long userId) {
 	    System.out.println("Inside Controller for user info");
 
 		return loginService.retrieveUserInfo(userId);
@@ -46,7 +47,7 @@ public class LoginController {
 	}
 	
 	@GetMapping("/users/login/{userId}/{password}")
-	public Account loginUser(@PathVariable Long userId, String password) {
+	public Account loginUser(@PathVariable("userId") Long userId, @PathVariable("password") String password) {
 		
 		System.out.println("Inside Controller for account info after login");
 		

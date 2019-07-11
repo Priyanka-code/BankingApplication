@@ -15,7 +15,7 @@ public class Account {
 	@Id
 	private Long accountNum;
 	private String accountHolderName;
-	private String balance;
+	private int balance;
 	private String credit;
 	private String debit;
 	private Long userId;
@@ -31,10 +31,11 @@ public class Account {
 	public void setAccountHolderName(String accountHolderName) {
 		this.accountHolderName = accountHolderName;
 	}
-	public String getBalance() {
+	
+	public int getBalance() {
 		return balance;
 	}
-	public void setBalance(String balance) {
+	public void setBalance(int balance) {
 		this.balance = balance;
 	}
 	public String getCredit() {
@@ -55,7 +56,7 @@ public class Account {
 	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
-	public Account(Long accountNum, String accountHolderName, String balance, String credit, String debit, Long userId) {
+	public Account(Long accountNum, String accountHolderName, int balance, String credit, String debit, Long userId) {
 		super();
 		this.accountNum = accountNum;
 		this.accountHolderName = accountHolderName;

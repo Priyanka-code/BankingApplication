@@ -12,10 +12,5 @@ import com.example.BankApplication.model.User;
  *
  */
 public interface RegistrationRepository extends JpaRepository<User, Long>{
-	
-
-	
-	
-	
 
 }
